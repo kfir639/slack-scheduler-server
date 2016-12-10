@@ -3,11 +3,10 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime, timedelta
 from slack_wrapper import SlackWrapper
 
-MY_APP_AUTH_TOKEN = "xoxp-109392953429-109392953445-114837489716-679c6d0ab790e44fcaeb31add007bcb4"
+MY_APP_AUTH_TOKEN = "YOUR-AUTH-TOKEN"
 SCHEDULED_EVENT_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 app = Flask(__name__)
-scheduler = BackgroundScheduler()
 
 def create_slack_message_task(job_execution_time, message_text):
 	scheduler.add_job(
@@ -28,5 +27,6 @@ def submit_scheduled_message():
 
 if __name__ == "__main__":
     slack_api = SlackWrapper(MY_APP_AUTH_TOKEN)
+    scheduler = BackgroundScheduler()
     scheduler.start()
     app.run(debug = True, host="0.0.0.0")

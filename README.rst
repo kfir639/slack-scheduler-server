@@ -9,7 +9,7 @@ Installation
 
     1. Clone the repo localy
     2. Intsall needed python libs using - >> pip install -r requirements.txt
-    3. Enter you group's Authentication-Token to the server.py file
+    3. Enter your group's Authentication-Token to the server.py file
 
 Usage
 -----
