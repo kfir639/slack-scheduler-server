@@ -20,8 +20,9 @@ def submit_scheduled_message():
     data = request.get_json(force=True)
     parsed_run_time = datetime.strptime(data["time"], SCHEDULED_EVENT_DATE_FORMAT)
     
-    create_slack_message_task(parsed_run_time, data["message"])
+    # Time and Data validation should go here......
     
+    create_slack_message_task(parsed_run_time, data["message"])
     return "Slack request has been submited"
  
 
